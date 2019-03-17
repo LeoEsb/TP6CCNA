@@ -3,7 +3,7 @@
 
 ## Configuration de OSPF
 
-Nous pouvons vérifier que la configuration c'est bien passé grâce à un ping et un traceroute:
+Verif config avec un ping et traceroute :
 ```
 login as: root
 root@192.168.4's password:
@@ -31,17 +31,19 @@ traceroute to server1 (10.6.202.10), 30 hops max, 60 byte packets
 
 ### 1. NAT : accès internet
 
-On peut vérifier que le NAT est activé en effectuant un `curl 8.8.8.8` sur chacune des machines :
+Verif NAT activé avec un `curl 8.8.8.8` sur chacune des machines :
 
+![Légende](IMG/IMG1.PNG)
 
 ### 2. Un service d'infra
 
 Notre serveur web installé, on peut y accèder depuis client1 avec un curl server1:
 
+![Légende](IMG/IMG2.PNG)
 
 ### 3. Serveur DHCP
 
-Aprés installation du serveur DHCP et modification du fichiers /etc/dhcp/dhcpd.conf, nous pouvons utiliser notre serveur DHCP :
+Utilisation serveur DHCP :   
 ```
 [root@client1 ~]# dhclient -v -r
 Internet Systems Consortium DHCP Client 4.2.5
@@ -88,10 +90,10 @@ bound to 10.6.201.50 -- renewal in 261 seconds.
 ```
 ### 4. Serveur DNS
 
-Lorsque notre serveur DNS est installé, on rajoute la ligne option domain-name-servers 10.6.202.10 dans le fichier /etc/dhcp/dhcpd.conf de notre machine dhcp.tp6.b1 et on peut effectuer la commande digsur toutes nos machines !
+Comme notre serveur DNS est installé, on rajoute la ligne option domain-name-servers 10.6.202.10 dans le fichier `/etc/dhcp/dhcpd.conf` de notre machine dhcp.tp6.b1 et grace à ça on peut faire la cmd `digsur` sur tt les machines.  
 ```
 [root@client1 ~]# dig server1.tp6.b1`
-
+ 
 ; <<>> DiG 9.9.4-RedHat-9.9.4-72.el7 <<>> server1.tp6.b1
 ;; global options: +cmd
 ;; Got answer:
