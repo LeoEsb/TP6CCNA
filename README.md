@@ -37,7 +37,7 @@ Verif NAT activé avec un `curl 8.8.8.8` sur chacune des machines :
 
 ### 2. Un service d'infra
 
-Notre serveur web installé, on peut y accèder depuis client1 avec un curl server1:
+On peut y accèder depuis client1 avec un curl server1 à notre serveur web installé:
 
 ![Légende](IMG/IMG2.PNG)
 
@@ -90,7 +90,7 @@ bound to 10.6.201.50 -- renewal in 261 seconds.
 ```
 ### 4. Serveur DNS
 
-Comme notre serveur DNS est installé, on rajoute la ligne option domain-name-servers 10.6.202.10 dans le fichier `/etc/dhcp/dhcpd.conf` de notre machine dhcp.tp6.b1 et grace à ça on peut faire la cmd `digsur` sur tt les machines.  
+Le serveur DNS est installé, on rajoute la ligne option domain-name-servers 10.6.202.10 dans le fichier `/etc/dhcp/dhcpd.conf` de notre machine dhcp.tp6.b1 et grace à ça on peut faire la cmd `digsur` sur tt les machines.  
 ```
 [root@client1 ~]# dig server1.tp6.b1`
  
@@ -117,3 +117,5 @@ tp6.b1.                 604800  IN      NS      server1.tp6.b1.
 ;; WHEN: mar. mars 12 15:53:19 CET 2019
 ;; MSG SIZE  rcvd: 73`
 ```
+
+## J'ai pas fais pas 5eme partie :/
